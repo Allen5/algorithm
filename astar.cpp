@@ -10,6 +10,21 @@ enum MapState
   WALL  = 3,
 };
 
+typedef struct Node
+{
+  int x;
+  int y;
+  int f;
+  int g;
+  int h;
+
+  Node* parent = NULL;
+
+  //set data member as zero
+  void resize() { memset(this, 0, sizeof(*this)); }
+
+}Node;
+
 int g_map[5][7] = {0}; //map data
 
 //initial map
@@ -42,6 +57,9 @@ int main(int argc, char** argv)
 {
 
   init_map();
+
+  //todo
+  //path finding
 
   print_map();
 
